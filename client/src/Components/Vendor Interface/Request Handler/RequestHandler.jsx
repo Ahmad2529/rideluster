@@ -184,7 +184,7 @@ const RequestHandler = props => {
                                 <b>Contact:</b> {booking.contactNo}
                                 <br/>
                                 
-                                <b>Start Time:</b> {booking.startTime}
+                                <b>Start Time:</b> {new Date(booking.date).toLocaleString()}
                             </div>
                             <div className="description">
                                 <h5 className="s-types green">

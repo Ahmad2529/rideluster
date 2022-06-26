@@ -64,11 +64,11 @@ const Completed = props => {
                                 <h6>Completion Time: <span className="green">12:32 pm</span></h6>
                                 <h6>Payment: <span className="red">Pending</span></h6> */}
                             </div>
-                            <div style={{marginTop: '20px'}}>
+                            {/* <div style={{marginTop: '20px'}}>
                                 <h4 className="ui header">Feedback</h4>
                                 <h5 className="ui header">In Progress...</h5>
-                                {/* <div className="ui heart rating" data-rating="1" data-max-rating="3"></div> */}
-                            </div>
+                                <div className="ui heart rating" data-rating="1" data-max-rating="3"></div>
+                            </div> */}
                             </div>
                             {/* <div className="extra content">
                             <div className="ui two buttons">

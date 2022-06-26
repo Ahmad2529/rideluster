@@ -9,6 +9,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const config = require('config')
 const normalize = require('normalize-url')
+const Area = require('../models/Area');
 
 
 const registerUser = async (req, res) => {
@@ -84,9 +85,7 @@ const registerUser = async (req, res) => {
 
 const getRegisteredAreas = async (req, res) => {
     try {
-        const areas = await ServiceStation.distinct('area', {
-            'approved': 'true'
-        })
+        const areas = await Area.find();
         if (!areas) {
             return res.status(404).json({
                 success: false,

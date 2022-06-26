@@ -26,12 +26,14 @@ const SearchResults = (props) => {
     dispatch(getAllServiceStation());
   }, []);
   useEffect(() => {
+    console.log(user);
+    console.log(state)
     if (user.areas.length && !state.areasLoaded) {
       let areasArray = user.areas.map((area) => {
         return {
-          key: area,
-          text: area,
-          value: area,
+          key: area.name,
+          text: area.name,
+          value: area.name,
         };
       });
       setState({

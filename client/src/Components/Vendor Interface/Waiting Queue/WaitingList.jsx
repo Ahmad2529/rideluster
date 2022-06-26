@@ -26,6 +26,12 @@ const WaitingList = props => {
             status: 'Waiting'
         }))
     }
+    const isToday = (obj) => {
+        if(new Date(obj.date).getDate() === new Date().getDate()) {
+            return true;
+        }
+        return false;
+    }
         return(
             <div className="main-waiting">
                 <h3 className="ui block center header r-head 3">WAITING QUEUE</h3>
@@ -68,10 +74,14 @@ const WaitingList = props => {
                             </div>
                             </div>
                             <div className="extra content">
-                            <div className="ui two buttons">
-                                <div onClick={() => moveToActive(waiting._id)} className="ui basic green button">Start Process</div>
-                                {/* <div className="ui basic red button">Cancel</div> */}
-                            </div>
+                                {
+                                    isToday(waiting) ?
+                                    <div className="ui two buttons">
+                                        <div onClick={() => moveToActive(waiting._id)} className="ui basic green button">Start Process</div>
+                                        {/* <div className="ui basic red button">Cancel</div> */}
+                                    </div>
+                                    : null
+                                }
                             </div>
                         </div>
                         }): 
